@@ -46,17 +46,19 @@
 
     <reporting>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>${checkstyle.plugin.version}</version>
-                <!-- Specifying configuration here will take effect on the execution of "mvn site",
-                     but will not take effect on the execution of "mvn checkstyle:checkstyle"  -->
-                <configuration>
-                    <configLocation>checkstyle.xml</configLocation>
-                    <failOnViolation>false</failOnViolation>
-                </configuration>
-            </plugin>
+          
+                 <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-checkstyle-plugin</artifactId>
+          <version>${checkstyle.plugin.version}</version>
+          <reportSets>
+            <reportSet>
+              <reports>
+                <report>checkstyle</report>
+              </reports>
+            </reportSet>
+          </reportSets>
+        </plugin>
         </plugins>
     </reporting>
 
